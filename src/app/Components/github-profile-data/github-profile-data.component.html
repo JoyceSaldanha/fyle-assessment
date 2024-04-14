@@ -1,0 +1,63 @@
+<div class="card mb-6" style="height: 400px; border-radius: 5px">
+  <div class="card-header text-white">
+    <span
+      class="badge bg-light text-primary mx-2"
+      style="border: 1px solid; border-radius: 5px"
+      >{{ githubProfile.followers }} followers</span
+    >
+    <span
+      class="badge bg-light text-primary mx-2"
+      style="border: 1px solid; border-radius: 5px"
+      >{{ githubProfile.public_repos }} Repos</span
+    >
+    <span
+      class="badge bg-light text-warning mx-2"
+      style="border: 1px solid; border-radius: 5px"
+      >{{ githubProfile.public_gists }} Gists</span
+    >
+    <span
+      class="badge bg-light text-danger mx-2"
+      style="border: 1px solid; border-radius: 5px"
+      >{{ githubProfile.following }} Following</span
+    >
+  </div>
+
+  <div class="card-body bg-light">
+    <ul class="list-group">
+      <li class="list-group-item border-0 increase-size">
+        <span class="fw-bold">Name:</span> {{ githubProfile.name }}
+      </li>
+      <li class="list-group-item border-0 increase-size">
+        <span class="fw-bold">Bio:</span>
+        {{ githubProfile.bio || "Not provided" }}
+      </li>
+      <li class="list-group-item border-0 increase-size">
+        <span class="fw-bold">Location:</span>
+        {{ githubProfile.location || "Not provided" }}
+      </li>
+      <li class="list-group-item border-0 increase-size">
+        <span class="fw-bold">Twitter:</span>
+        {{ githubProfile.twitter_username || "Not provided" }}
+      </li>
+      <li class="list-group-item border-0 increase-size">
+        <span class="fw-bold">Company:</span>
+        {{ githubProfile.company || "Not provided" }}
+      </li>
+      <li class="list-group-item border-0 increase-size">
+        <span class="fw-bold">Blog:</span>
+        <a
+          href="{{ githubProfile.blog }}"
+          target="_blank"
+          *ngIf="githubProfile.blog"
+        >
+          <i class="bi bi-link"></i> {{ githubProfile.blog }}
+        </a>
+        <span *ngIf="!githubProfile.blog">Not provided</span>
+      </li>
+      <li class="list-group-item border-0 increase-size">
+        <span class="fw-bold">Total Contribution:</span>
+        {{ githubProfile.contributions || "Not provided" }}
+      </li>
+    </ul>
+  </div>
+</div>
