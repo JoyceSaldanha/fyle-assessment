@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { GithubService } from '../../Services/github.service';
+import { NgModule } from '@angular/core';
 
 @Component({
   selector: 'app-github-app',
@@ -47,7 +48,7 @@ export class GithubAppComponent{
 
    getPageRange(): number[] {
     const range = [];
-    const maxPages = 9; // maximum number of page numbers to display
+    const maxPages = 9;
 
     const startPage = Math.max(1, this.currentPage - Math.floor(maxPages / 2));
     const endPage = Math.min(this.totalPages, startPage + maxPages - 1);

@@ -13,7 +13,6 @@
                 name="user"
                 type="search"
                 class="form-control"
-                id="exampleInputGithubUsername1"
                 placeholder="Enter your GitHub username"
               />
               <button type="submit" class="btn btn-light">Search</button>
@@ -72,7 +71,7 @@
                     class="text-primary"
                     target="_blank"
                   >
-                    <h6 class="card-title mb-0 fs-5">{{ repo.name }}</h6>
+                    <h6 class="card-title mb-0 fs-5">{{ repo?.name }}</h6>
                   </a>
                   <p
                     class="card-text text-wrap repo-description"

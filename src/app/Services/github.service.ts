@@ -25,7 +25,7 @@ export class GithubService {
     const cacheKey = `${dataURL}?page=${page}&per_page=${pageSize}`;
     return this.getCachedData(cacheKey).pipe(
       catchError(this.handleErrors),
-      map((response: any[]) => response.slice(0, pageSize)) // Limit to pageSize
+      map((response: any[]) => response.slice(0, pageSize))
     );
   }
 
@@ -34,7 +34,7 @@ export class GithubService {
       return this.cache.get(url)!;
     } else {
       const request = this.httpClient.get(url).pipe(
-        shareReplay(1) // Cache response for subsequent subscribers
+        shareReplay(1)
       );
       this.cache.set(url, request);
       return request;

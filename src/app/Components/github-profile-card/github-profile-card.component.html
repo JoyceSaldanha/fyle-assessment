@@ -1,18 +1,18 @@
 <div class="card card-sm" style="background-color: black">
   <img
-    [src]="githubProfile.avatar_url"
+    [src]="githubProfile?.avatar_url"
     alt=""
     class="img-fluid rounded-circle"
   />
 
   <div class="card-body border-0 d-flex flex-column align-items-center">
-    <h4 class="card-title">{{ githubProfile.name }}</h4>
-    <p class="card-text text-wrap">{{ githubProfile.bio }}</p>
+    <h4 class="card-title">{{ githubProfile?.name }}</h4>
+    <p class="card-text text-wrap">{{ githubProfile?.bio }}</p>
     <a
-      [href]="githubProfile.html_url"
+      [href]="githubProfile?.html_url"
       target="_blank"
       class="text-success text-decoration-none"
-      >{{ githubProfile.html_url }}</a
+      >{{ githubProfile?.html_url }}</a
     >
   </div>
 </div>
